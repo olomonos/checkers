@@ -5,8 +5,12 @@ import { getRandomInteger } from "../../store/actions";
 import { AppDispatch } from "../../store";
 
 import './header.scss';
+import { RouteComponentProps, withRouter } from "react-router";
+import { parseQuery } from "../../utils";
 
-export type Props = {
+type OwnProps = RouteComponentProps;
+
+type Props = {
   title: string;
   subtitle?: string;
   onMount?(): void;
@@ -29,21 +33,55 @@ class HeaderView extends React.Component<Props> {
 }
 
 const mapStateToProps: MapStateToProps<
-  Pick<Props, 'title'>,
-  Props,
+  Pick<Props, 'title' | 'subtitle'>,
+  OwnProps,
   AppState
 > = (state, props) => ({
-  title: `${props.title} (${state.randomInteger === null ? 'loading' : state.randomInteger})`
+  title: `${getTitle(props)} (${state.randomInteger === null ? 'loading' : state.randomInteger})`,
+  subtitle: getSubtitle(props)
 });
 
 const mapDispatchToProps: MapDispatchToProps<
   Pick<Props, 'onMount'>,
-  Props
+  OwnProps
 > = (dispatch: AppDispatch) => ({
   onMount() {dispatch(getRandomInteger(0, 9))}
 });
 
-export const Header = connect(
+const ConnectedHeader = connect(
   mapStateToProps,
   mapDispatchToProps
 )(HeaderView);
+
+export const Header = withRouter(ConnectedHeader);
+
+const getTitle = (props: RouteComponentProps): string => {
+  switch (props.location.pathname) {
+    case '/chapaev':
+      return 'Chapaev';
+    case '/':
+    case '/home':
+      return 'Checkers';
+    default: 
+      return 'Not Found';
+  }
+}
+
+const getSubtitle = (props: RouteComponentProps): string | undefined => {
+  if (props.location.pathname === '/chapaev') {
+    const goodwill = parseQuery(props.location.search).goodwill;
+    switch (goodwill) {
+      case 'yes':
+        return 'Good choice!';
+      case 'no':
+        return 'Why not? You should give it a try.';
+      default:
+        return undefined;
+    }
+  } else if (
+    props.location.pathname === '/' ||
+    props.location.pathname === '/home'
+  ) {
+    return 'Coming soon...';
+  }
+}
