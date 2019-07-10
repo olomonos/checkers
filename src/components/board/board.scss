@@ -1,0 +1,13 @@
+.board {
+  width: 70vh;
+  height: 70vh;
+  margin: 40px auto;
+  border: 1px solid lightgrey;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+
+  &__cell {
+    border: 1px solid lightgrey;
+  }
+}

@@ -1,14 +1,13 @@
 import React from 'react';
 import { RouteComponentProps } from "react-router";
 import { Header } from '../components/header';
+import { Board } from '../components/board';
 import { parseQuery } from "../utils";
 
 export const Chapaev: React.FC<RouteComponentProps> = props => (
   <div className="chapaev">
     <Header title="Chapaev" subtitle={getSubtitle(props)} />
-    <section>
-      <p>Let's pretend there is a board here.</p>
-    </section>
+    <Board />
   </div>
 );
 
@@ -23,4 +22,3 @@ const getSubtitle = (props: RouteComponentProps): string | undefined => {
       return undefined;
   }
 }
-
