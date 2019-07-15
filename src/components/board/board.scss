@@ -9,5 +9,9 @@
 
   &__cell {
     border: 1px solid lightgrey;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

@@ -1,0 +1,14 @@
+.checker {
+  width: 5vh;
+  height: 5vh;
+  border-radius: 2.5vh;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, .2);
+
+  &.white {
+    background-color: white;
+  }
+
+  &.black {
+    background-color: black;
+  }
+}
