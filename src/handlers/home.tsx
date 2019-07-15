@@ -6,7 +6,7 @@ import { Header } from '../components/header';
 
 export const Home: React.FC<RouteComponentProps> = props => {
   return (
-    <div className="home">
+    <div className="mainContainer">
       <Header title="Checkers" subtitle="Comming soon..." />
       <section>
         <p>Do you want to try Chapaev for now?</p>

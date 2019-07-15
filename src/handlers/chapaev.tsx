@@ -1,13 +1,17 @@
 import React from 'react';
 import { RouteComponentProps } from "react-router";
+
 import { Header } from '../components/header';
 import { Board } from '../components/board';
+import { ControlPanel } from "../components/control-panel";
+
 import { parseQuery } from "../utils";
 
 export const Chapaev: React.FC<RouteComponentProps> = props => (
-  <div className="chapaev">
+  <div className="mainContainer">
     <Header title="Chapaev" subtitle={getSubtitle(props)} />
     <Board />
+    <ControlPanel />
   </div>
 );
 
