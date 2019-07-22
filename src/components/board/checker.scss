@@ -1,8 +1,11 @@
 .checker {
-  width: 5vh;
-  height: 5vh;
+  // width: 5vh;
+  // height: 5vh;
+  width: 40px;
+  height: 40px;
   border-radius: 2.5vh;
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, .2);
+  position: absolute;
 
   &.white {
     background-color: white;
