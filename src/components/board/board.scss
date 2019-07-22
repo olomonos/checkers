@@ -1,7 +1,13 @@
+@import '../../styles/mixins.scss';
+
+.board-container {
+  position: relative;
+}
+
 .board {
-  width: 70vh;
-  height: 70vh;
-  margin: 40px auto;
+  @include board-template;
+
+  margin: 40px 100px;
   border: 1px solid lightgrey;
   display: grid;
   grid-template-columns: repeat(8, 1fr);

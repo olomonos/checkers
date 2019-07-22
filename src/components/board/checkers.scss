@@ -1,0 +1,10 @@
+@import '../../styles/mixins.scss';
+
+.checkers {
+  @include board-template;
+
+  position: absolute;
+  top: 0;
+  left: 100px;
+  // border: 2px solid red;
+}
