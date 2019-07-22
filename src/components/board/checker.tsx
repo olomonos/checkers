@@ -29,12 +29,12 @@ export const CheckerView: React.FC<CheckerProps> = ({ checker }) => {
   }
 };
 
-const getTopPosition = (position: number) => {
+const getLeftPosition = (position: number) => {
   const coord = position % FIELD_SIZE;
   return coordToPixel(coord);
 };
 
-const getLeftPosition = (position: number) => {
+const getTopPosition = (position: number) => {
   const coord = Math.floor(position / FIELD_SIZE);
   return coordToPixel(coord);
 };

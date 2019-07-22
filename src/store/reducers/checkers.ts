@@ -11,7 +11,7 @@ const DEFAULT_STATE: AppState['checkers'] = (() => {
   for (let i = 0; i < TOTAL_CHECKERS; i++) {
     const item: Checker = {
       position: -1,
-      type: i < TOTAL_CHECKERS / 2 ? 'White' : 'Black',
+      type: i < TOTAL_CHECKERS / 2 ? 'Black' : 'White',
     };
     arr[i] = item;
   }
