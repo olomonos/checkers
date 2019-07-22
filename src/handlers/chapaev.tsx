@@ -8,7 +8,7 @@ import { ControlPanel } from "../components/control-panel";
 import { parseQuery } from "../utils";
 
 export const Chapaev: React.FC<RouteComponentProps> = props => (
-  <div className="mainContainer">
+  <div className="main-container">
     <Header title="Chapaev" subtitle={getSubtitle(props)} />
     <Board />
     <ControlPanel />
