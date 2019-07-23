@@ -18,7 +18,7 @@ class HeaderView extends React.Component<Props> {
     return (
       <header className="header">
         <h1 className="header__heroText">{title}</h1>
-        {subtitle && <h6>{subtitle}</h6>}
+        {subtitle && <h5>{subtitle}</h5>}
       </header>
     );  
   }

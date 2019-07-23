@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './control-panel.scss';
+
 export type ControlPanelProps = {
   onPopulate(): void;
 }
