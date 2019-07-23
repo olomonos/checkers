@@ -11,8 +11,9 @@ export type AppState = {
 }
 
 export type Checker = {
-  position: number;
+  id: number;
   type: 'White' | 'Black';
+  position: number;
 }
 
 export type AppThunk = ThunkAction<void, AppState, RandomIntegerAPI, Action>;

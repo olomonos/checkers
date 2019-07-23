@@ -10,6 +10,7 @@ const DEFAULT_STATE: AppState['checkers'] = (() => {
   const arr: Checker[] = [];
   for (let i = 0; i < TOTAL_CHECKERS; i++) {
     const item: Checker = {
+      id: i,
       position: -1,
       type: i < TOTAL_CHECKERS / 2 ? 'Black' : 'White',
     };

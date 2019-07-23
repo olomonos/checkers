@@ -1,5 +1,5 @@
 import React from 'react';
-import { Checker } from "../../store/common";
+import { Checker, AppState } from "../../store/common";
 
 import './checker.scss';
 
@@ -9,9 +9,11 @@ const FIELD_SIZE = 8;
 
 export type CheckerProps = {
   checker: Checker;
+  onMove(): void;
+  turn: AppState['turn'];
 }
 
-export const CheckerView: React.FC<CheckerProps> = ({ checker }) => {
+export const CheckerView: React.FC<CheckerProps> = ({ checker, onMove, turn }) => {
   if (checker.position === -1) {
     return null;
   } else {
@@ -21,9 +23,12 @@ export const CheckerView: React.FC<CheckerProps> = ({ checker }) => {
     const leftPosition = getLeftPosition(checker.position);
 
     return (
-      <div
+      <button
         className={`checker ${checkerType}`}
         style={{top: `${topPosition}px`, left: `${leftPosition}px`}}
+        type="button"
+        onClick={onMove}
+        disabled={!isCheckerMovable(turn, checker.type)}
       />
     )
   }
@@ -40,3 +45,7 @@ const getTopPosition = (position: number) => {
 };
 
 const coordToPixel = (coord: number) => ((WIDTH / FIELD_SIZE) * (coord + 0.75) - RADIUS) + 6;
+
+const isCheckerMovable = (turn: AppState['turn'], checkerType: Checker['type']): boolean => {
+  return turn === 'White' && checkerType === 'White';
+};
