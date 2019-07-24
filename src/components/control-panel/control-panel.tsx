@@ -9,6 +9,7 @@ export type ControlPanelProps = {
 export const ControlPanelView: React.FC<ControlPanelProps> = props => (
   <div className="control-panel">
     <button
+      data-aid="BUTTON_POPULATE"
       type="button"
       className="btn"
       onClick={props.onPopulate}

@@ -24,6 +24,7 @@ export const CheckerView: React.FC<CheckerProps> = ({ checker, onMove, turn }) =
 
     return (
       <button
+        data-aid="CHECKER"
         className={`checker ${checkerType}`}
         style={{top: `${topPosition}px`, left: `${leftPosition}px`}}
         type="button"

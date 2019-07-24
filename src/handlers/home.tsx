@@ -14,6 +14,7 @@ export const Home: React.FC<RouteComponentProps> = props => {
         <ul className="unstyledList">
           <li>
             <Link
+              data-aid="LINK_TO_CHAPAEV"
               className="navigtion-link"
               to="/chapaev?goodwill=yes"
             >
@@ -22,6 +23,7 @@ export const Home: React.FC<RouteComponentProps> = props => {
           </li>
           <li>
             <Link
+              data-aid="LINK_TO_CHECKERS"
               className="navigtion-link"
               to="/chapaev?goodwill=no"
             >
